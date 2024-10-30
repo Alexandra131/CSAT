@@ -1,0 +1,18 @@
+    Aceasta tema implementeaza pragmatic o reducere de la problema CSAT la CNF SAT. 
+Initial am citit din fisier numarul de frunze si radacina, iar apoi operatiile logice, care au fost NOT, OR sau AND. 
+Operatiile logice cu tot cu numar le-am pus intr-un vector, am parcur vectorul si pentru fiecare caz (OR, NOT sau AND)
+am luat fiecare caracter si l.am transformat in numar, adauganu-l mai apoi intr-un vector specific al fiecarei operatii.
+Dupa ce am scris numere corespunzatore operatiilor m-am folosit de ele pentru a putea face transformearea.
+    Ce prevede transformearea pentru AND:
+        ex daca eu am ca imput AND 44 8 56 radacina, outputul problemei este 56 iar cele 2 inputuri sunt 44 respectiv 8. Pe care le-am scris sub aceasta forma:
+            C = 56, A = 44, B = 8,   (!A sau !B sau C) si (A sau !C) si (B sau !C), de asemena puteam aveam mai mult de 2 inputuri iar rezultatul s-ar scrie la fel,
+            pentru prima data avem operatie de negare pentru fiecare input cu radacina nenegata, iar mai apoi se ia fiecare input cu radacina negata.
+    Ce prevede transformarea pentru OR:
+        ex daca eu am ca imput OR 44 8 56 radacina, outputul problemei este 56 iar cele 2 inputuri sunt 44 respectiv 8. Pe care le-am scris sub aceasta forma:
+            C = 56, A = 44, B = 8,   (A sau B sau !C) si (!A sau C) si (!B sau C), de asemena puteam aveam mai mult de 2 inputuri iar rezultatul s-ar scrie la fel,
+            pentru prima data avem operatie pentru fiecare input cu radacina negata, iar mai apoi se ia fiecare input negat cu radacina nenegata.
+    Ce prevete transforamrea pentru NOT:
+        ex daca eu am ca input NOT 13 11, radacina, outputul este 11 iar inputul este 13. Pe care le-am scris sub aceasta forma:
+            C = 11, A = 13,  (!A sau !C) si (A sau C)
+
+Nu am folosit reducere pe care a-ti explicat-o m-am uitat pe acest site pentru a intelege mai bine https://en.wikipedia.org/wiki/Tseytin_transformation
